@@ -1,9 +1,9 @@
 const Discord = require('discord.js')
 
 module.exports = {
-    name: 'emo',
+    name: 'addemo',
     description: 'Thêm emmo vào server.',
-    usage: '<emoji>',
+    usage: '<addemo>',
     category: 'info',
     run: async(client, message, args) => {
         if (!args.length) return message.channel.send('Vui lòng để emoji nào đó vào để thêm vào server!')
