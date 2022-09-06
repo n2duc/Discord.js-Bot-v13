@@ -30,17 +30,6 @@ client.on('messageDelete', async function(message, channel) {
     })
 })
 
-client.on('messageCreate', message => {
-    
-    let cnt = message.content.toLowerCase()
-    if (cnt.includes("xexe")|| cnt.includes("3ka") || cnt.includes("ngkh") || cnt.includes("bof")) {
-        message.react('❤')
-    } else if (cnt.includes("zaac")) {
-        message.reply("Zà Ác Không chỉ già mà còn bựa")
-    }
-})
-
-
 
 client.esnipes = new Discord.Collection();
 client.on('messageUpdate', async(oldMes, newMes) => {
@@ -52,14 +41,6 @@ client.on('messageUpdate', async(oldMes, newMes) => {
         author: oldMes.author
     })
     client.esnipes.set(oldMes.channel.id, esnipes)
-})
-
-client.on('messageCreate', message => {
-    let cnt = message.content.toLowerCase()
-    if (cnt.includes("nhinui")) {
-        message.react('🔪')
-        message.react('🔫')
-    }
 })
 
 client.login(TOKEN);
