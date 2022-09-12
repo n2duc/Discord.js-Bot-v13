@@ -10,4 +10,7 @@ Bot thập cẩm made by Vietnamese
 </div>
     
 # Documentation & Guides
+  - [Documentation](https://discord.js.org/#/docs/discord.js/main/general/welcome "Discord.js Documentation")
+
+  - [Guides](https://discordjs.guide/#before-you-begin "Discord.js Guides")
     
