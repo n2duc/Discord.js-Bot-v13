@@ -27,7 +27,7 @@ module.exports = {
 
             const imageEmbed = new MessageEmbed()
             .setColor('GREEN')
-            .setAuthor({name: 'Reaction: Slap', iconURL: `${client.user.displayAvatarURL({ size: 1024, dynamic: true })}`})
+            .setAuthor({name: 'Reaction: Spank', iconURL: `${client.user.displayAvatarURL({ size: 1024, dynamic: true })}`})
             .setDescription(`${message.member.displayName} tét mông ${member.displayName} 50 cái`)
             .setImage(data.url)
             

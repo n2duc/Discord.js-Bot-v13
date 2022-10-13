@@ -1,4 +1,4 @@
-const array = require('../../thinh.json').data
+const array = require('../../document/thinh.json').data
 
 module.exports = {
     name: 'thinh',

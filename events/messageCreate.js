@@ -20,9 +20,10 @@ module.exports = (client, message) => {
     
                 if (now < expirationTime) {
                     const timeLeft = (expirationTime - now) / 1000;
-                    return message.channel.send(`Vui lòng chờ ${timeLeft.toFixed(1)} giây để sử dụng lệnh này!`);
+                    return message.channel.send(`Vui lòng chờ \`${timeLeft.toFixed(1)}\` giây để sử dụng lệnh này!`);
                 }
             }
+            if (command.category === 'music' && !message.member.voice.channel) return message.channel.send('Vui lòng vào room để sử dụng lệnh!')
             timestamps.set(message.author.id, now);
             setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
             command.run(client, message, args)

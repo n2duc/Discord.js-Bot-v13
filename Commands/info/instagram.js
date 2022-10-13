@@ -21,7 +21,7 @@ module.exports = {
                 .setTitle(account.full_name)
                 .setURL(`https://www.instagram.com/${instagram_id}/`)
                 .setThumbnail(account.profile_pic_url_hd)
-                .addField("Thông tin cá nhân", stripIndent `**- Tên người dùng:** ${account.username}
+                .addFields("Thông tin cá nhân", stripIndent `**- Tên người dùng:** ${account.username}
                 **- Tên đầy đủ: ** ${account.full_name}
                 **- Bio:** ${account.biography.length == 0 ? "Không có" : account.biography}
                 **- Số bài đăng:** ${account.edge_owner_to_timeline_media.count}

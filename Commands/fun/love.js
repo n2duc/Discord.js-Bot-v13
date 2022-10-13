@@ -4,6 +4,7 @@ module.exports = {
     name: 'love',
     category: 'fun',
     aliases: [],
+    cooldown: 60,
     usage: '[prefix]love [tag/id người dùng]',
     descriptions: 'Xem bạn và người ấy có hợp nhau hay không !',
     run: async(client, message, args) => {
@@ -25,7 +26,8 @@ module.exports = {
             value:`💟 ${Math.floor(love)}%\n\n${loveLevel}`});
         message.channel.send({ embeds: [embed] })
         if (love < 50) {
-            message.channel.send(`**💔 Chúng ta không thuộc về nhau 💔**`)
+            client.bank(message.author.id, 3000)
+            message.channel.send(`**💔 Chúng ta không thuộc về nhau 💔** An ủi \`3000\` <:money:967037594879807550> nè 😢`)
         } else {
             message.channel.send('*Hợp nhau đấy! OTP Riu 💔*')
         }

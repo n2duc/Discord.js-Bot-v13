@@ -16,7 +16,7 @@ module.exports = {
             .setAuthor({name: 'Đợi xíu nha, đừng có mà bựa ...', iconURL: `${client.user.displayAvatarURL({ size: 1024, dynamic: true })}`})
         let searching = await message.channel.send({embeds: [searchEmbed]})
 
-        const url = await fetch(`https://nekos.life/api/v2/img/hug`)
+        const url = await fetch(`https://nekos.life/api/v2/img/feed`)
         const data = await url.json()
         .then(data=> {
 

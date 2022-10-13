@@ -2,18 +2,17 @@ const { getAudioUrl } = require('google-tts-api');
 const voice = require('@discordjs/voice')
 module.exports = {
     name: 'speak',
-    category: '🔮-Chức năng',
+    category: 'fun',
     aliases: ['s'],
     utilisation: '{prefix}speak',
-    usage: '%speak [text]',
+    usage: '[text]',
     descriptions: 'Chuyển chữ thành lời nói trong kênh thoại',
     run: async (client, message, args) => {
         let string = args.join(" ");
-        let voiceChannel = message.member.voice.channel;
 
         if (!string) return message.channel.send("Please type something to speak!");
         if (string.length > 200) return message.channel.send("I can only speak 200 words!");
-        if (!voiceChannel) return message.channel.send("Please join a voice channel to use this command!");
+        if (!message.member.voice.channel) return message.channel.send("Please join a voice channel to use this command!");
 
         let audioUrl = await getAudioUrl(string, {
             lang: "vi",

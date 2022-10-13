@@ -5,7 +5,7 @@ module.exports = {
     name: 'slap',
     category: 'reactions',
     aliases: ['va'],
-    usage: '[prefix]slap [tag/id người dùng]',
+    usage: '[tag/id người dùng]',
     descriptions: 'Dành một cái vả cho người khác',
     run: async (client, message, args) => {
         const member = message.mentions.members.first()|| message.guild.members.cache.get(args[0]) || message.member

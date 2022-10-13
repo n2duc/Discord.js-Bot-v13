@@ -13,7 +13,7 @@ module.exports = {
             .setThumbnail(client.user.displayAvatarURL())
             .setAuthor({ name: `Bot tập sự - ${client.user.username}`, iconURL: message.guild.iconURL({ dynamic: true }) })
             .setFooter({ text: message.guild.name, iconURL: message.author.avatarURL({ dynamic: true }) })
-            .setDescription(`✨Một sản phẩm của **PentHouse**✨
+            .setDescription(`✨Một sản phẩm của **CUDAH**✨
             **
             > Servers: \`${client.guilds.cache.size}\`
             > Members: \`${Math.ceil(client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString("tr-TR"))}\`

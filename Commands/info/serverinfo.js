@@ -46,7 +46,7 @@ module.exports = {
         },
         {
         name: `💏 **Thành viên**`,
-        value: `**${message.guild.memberCount}** members `,
+        value: `**${message.guild.memberCount}** members (**${message.guild.members.cache.filter(member => !member.user.bot).size}** User | **${message.guild.members.cache.filter(member => member.user.bot).size}** Bot)`,
         inline: true
         },
         {

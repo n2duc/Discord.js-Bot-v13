@@ -26,6 +26,7 @@ module.exports = {
                     .setColor("RED")
                     .setImage(image);
                 message.channel.send({embeds: [embed]});
+                
             } else if(answer == 'pussy') {
                 
                 const image = await akaneko.nsfw.pussy()
@@ -33,6 +34,7 @@ module.exports = {
                     .setColor("RED")
                     .setImage(image);
                 message.channel.send({embeds: [embed]});
+
             } else if(answer == 'yuri') {
                 
                 const image = await akaneko.nsfw.yuri()
@@ -40,6 +42,7 @@ module.exports = {
                     .setColor("RED")
                     .setImage(image);
                 message.channel.send({embeds: [embed]});
+
             } else if(answer == 'ass') {
                 
                 const image = await akaneko.nsfw.ass()
@@ -47,6 +50,7 @@ module.exports = {
                     .setColor("RED")
                     .setImage(image);
                 message.channel.send({embeds: [embed]});
+
             } else if(answer == 'gif') {
                 
                 const image = await akaneko.nsfw.gifs()
@@ -54,6 +58,7 @@ module.exports = {
                     .setColor("RED")
                     .setImage(image);
                 message.channel.send({embeds: [embed]});
+
             } else if(answer == 'thudam') {
                 
                 const image = await akaneko.nsfw.masturbation()
@@ -61,6 +66,7 @@ module.exports = {
                     .setColor("RED")
                     .setImage(image);
                 message.channel.send({embeds: [embed]});
+
             } else if(answer == 'panties') {
                 
                 const image = await akaneko.nsfw.panties()
@@ -68,6 +74,7 @@ module.exports = {
                     .setColor("RED")
                     .setImage(image);
                 message.channel.send({embeds: [embed]});
+
             } else if(answer == 'uniform') {
                 
                 const image = await akaneko.nsfw.uniform()
@@ -75,6 +82,7 @@ module.exports = {
                     .setColor("RED")
                     .setImage(image);
                 message.channel.send({embeds: [embed]});
+
             } else if(answer == 'glasses') {
                 
                 const image = await akaneko.nsfw.glasses()
@@ -82,6 +90,7 @@ module.exports = {
                     .setColor("RED")
                     .setImage(image);
                 message.channel.send({embeds: [embed]});
+
             }  else if(answer == 'school') {
                 
                 const image = await akaneko.nsfw.school()
@@ -89,11 +98,29 @@ module.exports = {
                     .setColor("RED")
                     .setImage(image);
                 message.channel.send({embeds: [embed]});
+            
+            } else if(answer == 'cum') {
+                
+                const image = await akaneko.nsfw.cum()
+                const embed = new Discord.MessageEmbed()
+                    .setColor("RED")
+                    .setImage(image);
+                message.channel.send({embeds: [embed]});
+            
             } else if (answer == 'cmd') {
                 const embed = new Discord.MessageEmbed()
                     .setTitle("Lựa chọn của lệnh \`NSFW\`:")
                     .setColor('BLURPLE')
-                    .setDescription('\`pussy\` \`doujin\` \`yuri\` \`ass\` \`gif\` \`thudam\` \`panties\` \`uniform\` \`glasses\` \`school\`')
+                    .setDescription('\`pussy\` \`doujin\` \`yuri\` \`ass\` \`gif\` \`thudam\` \`panties\` \`uniform\` \`glasses\` \`school\` \`cum\`')
+                    .setTimestamp()
+                    .setFooter({text: `Yêu cầu: ${message.author.tag}`, iconURL: message.author.displayAvatarURL({ dynamic: true })})
+                message.channel.send({embeds: [embed]})
+            } else {
+                message.channel.send("❌ **Không có câu lệnh này !! Vui lòng thử lại hoặc xem lại danh sách lệnh **")
+                const embed = new Discord.MessageEmbed()
+                    .setTitle("Lựa chọn của lệnh \`NSFW\`:")
+                    .setColor('BLURPLE')
+                    .setDescription('\`pussy\` \`doujin\` \`yuri\` \`ass\` \`gif\` \`thudam\` \`panties\` \`uniform\` \`glasses\` \`school\` \`cum\`')
                     .setTimestamp()
                     .setFooter({text: `Yêu cầu: ${message.author.tag}`, iconURL: message.author.displayAvatarURL({ dynamic: true })})
                 message.channel.send({embeds: [embed]})
