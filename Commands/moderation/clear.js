@@ -1,5 +1,3 @@
-const { Client, Message, MessageEmbed } = require('discord.js')
-
 module.exports = {
     name: 'clear',
     description: 'Xóa số lượng tin nhắn',
@@ -8,26 +6,35 @@ module.exports = {
     category: 'moderation',
 
     run: async(client, message, args) => {
-        const member = message.mentions.members.first();
+        await message.delete();
 
-        const messages = message.channel.messages.fetch();
+        if (!message.member.permissions.has("MANAGE_MESSAGES")) {
+            return message.reply("Bạn không có quyền MANAGE_MESSAGES").then(m => m.delete({timeout: 5000}));
+        }
 
-        if (member) {
-            const userMessages = (await messages).filter((m) => m.author.id === member.id);
+        if (!message.guild.me.permissions.has("MANAGE_MESSAGES")) {
+            return message.reply("Bot không có quyền MANAGE_MESSAGES nên bot không thể xoá.").then(m => m.delete({timeout: 5000}));
+        }
 
-            await message.channel.bulkDelete(userMessages, true);
-            message.channel.send(`${member} **Tin nhắn đã được xóa.** 👍`);
+        const user = message.mentions.users.first()
+        const ammount = !!parseInt(args[0]) ? parseInt(args[0]) : parseInt(args[1])
+        if (!ammount) return message.reply('Vui lòng nhập số lượng tin nhắn để xoá.')
+        if (ammount < 1) return message.reply('Vui lòng nhập số lớn hơn 1.')
+        if (ammount > 100) return message.reply('Vui lòng nhập số nhỏ hơn 100.')
+        if (!ammount && !user) return message.channel.send(`Sử dụng lệnh help clear\` để biết thêm thông tin.`)
+        if (!user) {
+            message.channel.bulkDelete(ammount, true).then(delmsg => {
+                message.channel.send(`Đã xoá \`${delmsg.size}\` tin nhắn!`).then(m => m.delete({timeout: 5000}))
+            })
         } else {
-            if (!args[0])
-                return message.channel.send('**Vui lòng nhập số lượng tin nhắn cần xóa.**');
-            if (isNaN(args[0]))
-                return message.channel.send('**Số lượng là một chữ số!**');
-            if (parseInt(args[0]) >= 100)
-                return message.channel.send('**Số lượng tối đa tin nhắn có thể xóa là 100!**');
-            await message.channel
-                .bulkDelete(parseInt(args[0]) + 1)
-                .catch((err) => console.log(err));
-            message.channel.send('Đã xóa ' + args[0] + ' tin nhắn...');
+            message.channel.messages.fetch({
+                limit: 100,
+            }).then(messages => {
+                messages = messages.filter(m => m.author.id === user.id).array().slice(0, ammount)
+                message.channel.bulkDelete(messages, true).then(delmsg => {
+                    message.channel.send(`Đã xoá \`${delmsg.size}\` tin nhắn!`).then(m => m.delete({timeout: 5000}))
+                })
+            }) 
         }
     },
 };

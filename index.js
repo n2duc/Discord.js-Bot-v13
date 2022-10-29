@@ -17,9 +17,7 @@ const client = new Discord.Client({
     partials: ['CHANNEL', 'MESSAGE'],
     allowedMentions: ["users"]
 });
-
 Discord.Intents.FLAGS
-
 
 
 mongo.connect(process.env.MONGODB_SRV, {

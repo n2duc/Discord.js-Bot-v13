@@ -14,7 +14,7 @@ module.exports = {
         const url = `https://www.instagram.com/${instagram_id}/?__a=1`
         let res;
         try {
-            res = await axios.get(url)
+            res = await axios.get(url, { headers: { cookie: process.env.INSTAGRAM_COOKIE }})
             const account = res.data.graphql.user;
             const embed = new MessageEmbed()
                 .setColor('BLURPLE')

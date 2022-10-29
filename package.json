@@ -8,6 +8,7 @@
     "akaneko": "^5.2.3",
     "ascii-table": "^0.0.9",
     "axios": "^0.26.1",
+    "canvacord": "^5.4.8",
     "canvas": "^2.10.1",
     "common-tags": "^1.8.2",
     "discord-api-types": "^0.30.0",
@@ -29,6 +30,7 @@
     "nsfw-discord": "^7.0.0",
     "random-puppy": "^1.1.0",
     "sequelize": "^6.18.0",
+    "string-similarity": "^4.0.4",
     "twemoji-parser": "^14.0.0",
     "weather-js": "^2.0.0"
   }

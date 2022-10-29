@@ -42,9 +42,9 @@ module.exports = {
 
     const status = {
       "online": '🟢 Trực tuyến',
-       "idle": '🟡 Chờ',
-       "dnd": '🔴 Đừng làm phiền',
-       "offline": '⚫ Ngoại tuyến'
+      "idle": '🟡 Chờ',
+      "dnd": '🔴 Đừng làm phiền',
+      "offline": '⚫ Ngoại tuyến'
     }
 
      const badges = {
@@ -156,13 +156,13 @@ const pseudo = user.user.displayName ? `(${user.user.displayName})` : "";
                         .setLabel('Avatar')
                         .setStyle('LINK')
                         .setURL(user.user.displayAvatarURL({ size: 2048, dynamic: true }))
-                       )
-                       if(bannerUrl) { row.addComponents(
-                        new MessageButton()
-                        .setLabel('Banner')
-                        .setStyle('LINK')
-                        .setURL(`${bannerUrl}`)
-                       )}
+                      )
+                      if(bannerUrl) { row.addComponents(
+                      new MessageButton()
+                      .setLabel('Banner')
+                      .setStyle('LINK')
+                      .setURL(`${bannerUrl}`)
+                      )}
 
     message.reply({ embeds: [Reponse], components: [row] });
     
