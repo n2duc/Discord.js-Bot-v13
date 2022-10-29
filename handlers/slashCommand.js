@@ -22,5 +22,5 @@ module.exports = (client) => {
         await client.guilds.cache.get(guildID).commands.set(slashCommands);
     });
 
-    console.log(`Đã load ${count} slash commands!`);
+    console.log(`Đã load ${count} slash commands! ✅`);
 }

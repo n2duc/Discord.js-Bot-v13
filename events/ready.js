@@ -4,10 +4,14 @@ module.exports = (client) => {
     client.user.setActivity('CUDAH No.1 | Prefix .', { type: 'WATCHING' });
 
     const activities = [
-        "That's What I Like",
-        "One Piece 🤏",
-        "Cho đi và nhận lại ❤",
-        "Địt mọa địt vợ MF"
+        "C ++",
+        "C Sharp",
+        "Python",
+        "Javascript",
+        "Java",
+        "ReactJS",
+        "VueJS",
+        "AngularJS"
     ]
 
     setInterval(() => {

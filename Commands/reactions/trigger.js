@@ -1,14 +1,18 @@
-const Canvacord = require('canvacord');
+const { Canvas } = require('canvacord');
 const { MessageAttachment } = require('discord.js')
+
 module.exports = {
     name: "trigger",
     category: "reactions",
     description: "Triggererrreerere",
-    usage: "trigger [@tag]",
+    usage: "[@tag]",
     run: async (client, message, args) => {
-        let avatar = message.author.displayAvatarURL({ dynamic: false, format: 'png' });
-        let image = await Canvacord.Canvas.trigger(avatar);
-        let attachment = new MessageAttachment(image, "triggered.gif");
-        return message.channel.send(attachment);
+        const user = message.mentions.users.first() || message.author
+        const avatar = user.displayAvatarURL({ dynamic: false, format: 'png' })
+        const image = await Canvas.trigger(avatar)
+
+        const attachment = new MessageAttachment(image, "trigger.gif")
+
+        message.channel.send({ files: [attachment]})
     }
 }

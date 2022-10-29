@@ -10,5 +10,5 @@ module.exports = (client) => {
         client.on(eventName, event.bind(null, client));
         count++;
     }
-    console.log(`${count} event đã sẵn sàng!`);
+    console.log(`${count} event đã sẵn sàng! ✅`);
 }

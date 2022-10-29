@@ -1,37 +1,22 @@
-const { MessageEmbed } = require('discord.js');
-const fetch = require('node-fetch');
+const { Canvas } = require('canvacord');
+const { MessageAttachment } = require('discord.js')
 
 module.exports = {
-    name: 'spank',
-    category: 'reactions',
-    aliases: ['tetdit', 'vodit'],
-    usage: '[prefix]spank [tag/id người dùng]',
-    descriptions: 'Tét ass thần chưởng !!',
+    name: "spank",
+    category: "reactions",
+    description: "Tét mông thần chưởng",
+    usage: "[@tag]",
     run: async (client, message, args) => {
-        const member = message.mentions.members.first()|| message.guild.members.cache.get(args[0]) || message.member
-        if(member.id === message.author.id) return message.reply ("Tét mông chính mình à, bựa quá");
-        let robber = message.author;
-        let searchEmbed = new MessageEmbed()
-            .setColor('GREEN')
-            .setAuthor({name: 'Đợi xíu nha, đừng có mà bựa ...', iconURL: `${client.user.displayAvatarURL({ size: 1024, dynamic: true })}`})
-        let searching = await message.channel.send({embeds: [searchEmbed]})
+        const author = message.author.displayAvatarURL({ dynamic: false, format: 'png'})
+        const user = message.mentions.users.first() || message.guild.members.cache.get(args[0]) || message.member
+        
+        if (!user) return message.channel.send("Vui lòng tag ai đó để vỗ mong")
 
-        const url = await fetch(`https://nekos.life/api/v2/img/spank`)
-        const data = await url.json()
-        .then(data=> {
+        const avatar = user.displayAvatarURL({ dynamic: false, format: 'png' })
+        const image = await Canvas.spank(author, avatar)
 
-            const noData = new MessageEmbed()
-            .setColor('RED')
-            .setDescription(`Có lỗi xảy ra trong quá trình tìm ảnh!`)
-            if(!data) return searching.edit({embeds : [noData]})
+        const attachment = new MessageAttachment(image, "spank.gif")
 
-            const imageEmbed = new MessageEmbed()
-            .setColor('GREEN')
-            .setAuthor({name: 'Reaction: Spank', iconURL: `${client.user.displayAvatarURL({ size: 1024, dynamic: true })}`})
-            .setDescription(`${message.member.displayName} tét mông ${member.displayName} 50 cái`)
-            .setImage(data.url)
-            
-            return searching.edit({embeds: [imageEmbed]})
-        })
+        message.channel.send({ files: [attachment]})
     }
 }

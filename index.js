@@ -24,7 +24,7 @@ mongo.connect(process.env.MONGODB_SRV, {
     useUnifiedTopology: true,
     useNewUrlParser: true
 }).then(() => {
-    console.log(`Đã kết nối thành công với Database!`)
+    console.log(`Đã kết nối thành công với Database! ✅`)
 }).catch( err => {
     console.log(err)
 })

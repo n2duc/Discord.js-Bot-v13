@@ -5,6 +5,7 @@ let table = new ascii("Commands");
 table.setHeading('COMMAND', ' Tình Trạng ');
 
 module.exports = (client) => {
+    let count = 0
     readdirSync('./Commands').forEach(dir => {
         const commands = readdirSync(`./Commands/${dir}/`).filter(file => file.endsWith('.js'))
         for (let file of commands) {
@@ -12,6 +13,7 @@ module.exports = (client) => {
             if (pull.name) {
                 client.commands.set(pull.name, pull);
                 table.addRow(file, '🔹 Hoạt động')
+                count++
             } else {
                 table.addRow(file, '🔸 Chưa chạy')
                 continue;
@@ -20,4 +22,5 @@ module.exports = (client) => {
         }
     });
     console.log(table.toString());
+    console.log(`Đã load ${count} commands! ✅`)
 }
