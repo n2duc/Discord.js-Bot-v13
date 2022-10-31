@@ -29,7 +29,6 @@ mongo.connect(process.env.MONGODB_SRV, {
     console.log(err)
 })
 
-
 client.commands = new Discord.Collection();
 client.interactions = new Discord.Collection();
 client.aliases = new Discord.Collection();
