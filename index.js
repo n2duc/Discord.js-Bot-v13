@@ -5,7 +5,7 @@ const Discord = require('discord.js');
 // const prefix = process.env.PREFIX
 const TOKEN = process.env.TOKEN
 const mongo = require('mongoose')
-const schema = require('./schema')
+const schema = require('./schemas/schema')
 const generateImage = require("./generateImage")
 
 
