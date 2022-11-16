@@ -4,7 +4,7 @@ const ms = require('ms');
 module.exports = {
     name: 'unban',
     category: 'moderation',
-    descriptions: 'Rút lại lời phán xét của Chúa',
+    description: 'Rút lại lời phán xét của Chúa',
     run: async (client, message, args) => {
         if (!message.member.permissions.has('BAN_MEMBERS')) return message.reply('Bạn không có quyền unban người khác!');
 

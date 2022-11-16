@@ -18,7 +18,7 @@ module.exports = {
             > Servers: \`${client.guilds.cache.size}\`
             > Members: \`${Math.ceil(client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString("tr-TR"))}\`
             > Channels: \`${client.channels.cache.size}\`**`)
-            .addFields({name: "Mời Bot vào server của bạn:", value: `**[Add Me](https://discord.com/api/oauth2/authorize?client_id=954746412288049222&permissions=8&scope=bot)**`, inline: true})
+            .addFields({name: "Mời Bot vào server của bạn:", value: `**[Add Me](https://discord.com/api/oauth2/authorize?client_id=${process.env.CLIENT_ID}&permissions=8&scope=bot)**`, inline: true})
         message.channel.send({ embeds: [embed] });
 
     }

@@ -18,9 +18,9 @@ module.exports = (client) => {
         }
     });
 
-    client.once('ready', async () => {
-        await client.guilds.cache.get(guildID).commands.set(slashCommands);
-    });
+    // client.once('ready', async () => {
+    //     await client.guilds.cache.get(guildID).commands.set(slashCommands);
+    // });
 
     console.log(`Đã load ${count} slash commands! ✅`);
 }

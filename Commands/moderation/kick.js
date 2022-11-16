@@ -4,7 +4,7 @@ const ms = require('ms');
 module.exports = {
     name: 'kick',
     category: 'moderation',
-    descriptions: 'Cho đứa nào đó cút tạm thời khỏi nơi đây',
+    description: 'Cho đứa nào đó cút tạm thời khỏi nơi đây',
     run: async (client, message, args) => {
         if (!args[0]) return message.reply("Vui lòng tag người nào đó để kick")
 
@@ -62,7 +62,6 @@ module.exports = {
                 if (i.user.id !== message.author.id) return
                 if (i.customId === 'kickyes') {
                     toKick.kick({ reason })
-                    toKick.send(`Bạn vừa bị kick khỏi ${message.guild.name} bởi ${message.author} với lý do: ${reason}`)
                     kickPage.edit({ embeds: [kickEmbed], components: [] })
                 } else if (i.customId === 'kickno') {
                     kickPage.edit({ embeds: [kickEmbed2], components: [] })
