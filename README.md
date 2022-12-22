@@ -21,7 +21,7 @@ https://github.com/n2duc/Discord.js-Bot-v13.git
 + `PREFIX`: Thay đổi prefix theo ý thích
 + `MONGODB_SRV`: Thay đổi link tới MongoDB
 - Thay đổi `GUILD_ID` trong tất cả các mục
-- Chạy lệnh `npm index.js` trong terminal
+- Chạy lệnh `node index.js` trong terminal
 # LastWord
 Đây là BOT nhằm mục đích giải trí nên mọi sai sót mong mọi người thông cảm.
 Cảm ơn đã sử dụng BOT của chúng tôi !!!
