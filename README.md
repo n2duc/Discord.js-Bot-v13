@@ -16,6 +16,7 @@ Bot thập cẩm made in Vietnamese
 ```sh
 https://github.com/n2duc/Discord.js-Bot-v13.git
 ```
+- Run `npm install`
 - Thay đổi thông tin trong `.env`
 + `TOKEN`: Thay đổi bằng token của bot
 + `PREFIX`: Thay đổi prefix theo ý thích
